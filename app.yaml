@@ -10,5 +10,9 @@ handlers:
     mime_type: text/javascript
     static_dir: public/js
 
+    -url: /Img/(.*\.(png|jpg)) $
+    static_files: public/Img
+    upload: public/Img/(.*\.(png|jpg)) $
+
   - url: /.*
     script: auto
