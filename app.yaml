@@ -1,0 +1,14 @@
+runtime: go113
+
+handlers:
+  - url: /
+    mime_type: text/html
+    static_files: public/index.html
+    upload: public/index.html
+
+  - url: /js
+    mime_type: text/javascript
+    static_dir: public/js
+
+  - url: /.*
+    script: auto

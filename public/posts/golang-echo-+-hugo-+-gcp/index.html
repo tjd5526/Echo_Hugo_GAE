@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.65.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Golang Echo &#43; Hugo &#43; GAE&nbsp;&ndash;&nbsp;CHIqueen</title><link rel="stylesheet" href="/css/core.min.a256f72702f9a9e4e3a4d222d5b6c02d923d90eb8e2a31fed8cff6370dc60557ef250dc912c2301678f71c15c7abce00.css" integrity="sha384-olb3JwL5qeTjpNIi1bbALZI9kOuOKjH&#43;2M/2Nw3GBVfvJQ3JEsIwFnj3HBXHq84A"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">CHIqueen</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div></section><div id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Golang Echo + Hugo + GAE</h1><p class="article date">2020-03-29</p></section><article class="article markdown-body"><p>테마는 notepadium을 사용했습니다.<br>
+<a href="https://themes.gohugo.io/hugo-notepadium/"target="_blank">https://themes.gohugo.io/hugo-notepadium/</a></p>
+<hr>
+<p><a target="_blank" rel="noopener noreferrer" 
+  href="/Img/EHG-1.png"><img  src="/Img/EHG-1.png"
+        alt="."/></a><br>
+프로젝트 구조입니다.<br>
+GCP에 올려줄땐 public, app.go, app-standalone.go, go.mod, go.sum, app.yaml만 올려줍니다.</p>
+<p>config.toml는 아래 처럼 설정했습니다.</p>
+<pre><code>baseURL = &quot;https://go.chiqueen.dev&quot;
+languageCode = &quot;ko-kr&quot;
+title = &quot;CHIqueen&quot;
+theme = &quot;hugo-notepadium&quot;
+googleAnalytics = &quot;&quot;
+enableRobotsTXT = true
+
+[params]
+style = &quot;auto&quot;
+
+[params.syntax]
+use = &quot;hljs&quot;
+theme = &quot;dracula&quot;
+darkTheme = &quot;xcode-dark&quot;
+
+[params.assets]
+css = [&quot;css/fonts.css&quot;]
+
+[params.nav]
+showCategories = true
+showTags = true
+
+[[params.nav.custom]]
+title = &quot;About&quot;
+url = &quot;/about&quot;
+</code></pre><p>Hugo의 나머지 설정은 <a href="https://gohugo.io/getting-started/quick-start/"target="_blank">quick-start</a>를 참고해주세요</p>
+<p>아래는 app.yaml입니다.</p>
+<pre><code>runtime: go113
+
+handlers:
+  - url: /
+    mime_type: text/html
+    static_files: public/index.html
+    upload: public/index.html
+
+  - url: /js
+    mime_type: text/javascript
+    static_dir: public/js
+
+  - url: /.*
+    script: auto
+</code></pre><p>처음 굉장히 오래걸린게 app.yaml인데 echo docs에 잘 나와 있어서 빠르게 끝났던거 같습니다.</p>
+<p>나머지 app.go랑 app-standalone.go는 <a href="https://echo.labstack.com/cookbook/google-app-engine"target="_blank">https://echo.labstack.com/cookbook/google-app-engine</a> 이걸 참고하시면 됩니다.</p>
+<p>이제 의존성 관리를 위해 Go module을 사용해줍니다.</p>
+<pre><code>$ go mod init
+$ go build
+</code></pre>
+<p>go.mod와 go.sum 파일이 생겼다면
+이제 git에 올려준뒤</p>
+<pre><code>$ gcloud app deploy
+</code></pre>
+<p>해주면 끝</p></article><section class="article labels"><a class="category" href=/categories/go/>Go</a><a class="tag" href=/tags/echo/>Echo</a><a class="tag" href=/tags/gcp/>GCP</a><a class="tag" href=/tags/hugo/>Hugo</a></section></div></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">CHIqueen</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><script src="/js/hljs.min.0799348a91dce12c6be4a73f943cfe78f181f4e6f6ec35c4af0fca1de377879f77cfab03c30f03a174d675737b5a9314.js" integrity="sha384-B5k0ipHc4Sxr5Kc/lDz&#43;ePGB9Ob27DXErw/KHeN3h593z6sDww8DoXTWdXN7WpMU"></script><script>hljs.initHighlightingOnLoad();</script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-162012521-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>
