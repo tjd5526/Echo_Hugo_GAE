@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.65.3" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Beakjoon_무한문자열&nbsp;&ndash;&nbsp;CHIqueen</title><link rel="stylesheet" href="/css/core.min.a256f72702f9a9e4e3a4d222d5b6c02d923d90eb8e2a31fed8cff6370dc60557ef250dc912c2301678f71c15c7abce00.css" integrity="sha384-olb3JwL5qeTjpNIi1bbALZI9kOuOKjH&#43;2M/2Nw3GBVfvJQ3JEsIwFnj3HBXHq84A"><body>
+    <div class="base-body"><section id="header" class="site header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">CHIqueen</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/about">About</a></nav></div></span></div></section><div id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Beakjoon_무한문자열</h1><p class="article date">2020-03-31</p></section><article class="article markdown-body"><p><a href="https://github.com/tjd5526/Algorithm_Go/tree/master/Beakjoon/Silver%204/%EB%AC%B4%ED%95%9C%20%EB%AC%B8%EC%9E%90%EC%97%B4"target="_blank">github</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;strings&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>(){
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#66d9ef">string</span>
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Scanln</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">a</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Scanln</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">b</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Repeat</span>(<span style="color:#a6e22e">a</span>, len(<span style="color:#a6e22e">b</span>))<span style="color:#f92672">==</span><span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Repeat</span>(<span style="color:#a6e22e">b</span>, len(<span style="color:#a6e22e">a</span>)){
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#ae81ff">1</span>)
+	} <span style="color:#66d9ef">else</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#ae81ff">0</span>)
+	}
+}
+</code></pre></div><p>strings.Compare로 비교하는 방법도 있지만 <a href="https://golang.org/pkg/strings/#Compare"target="_blank">godoc</a>에선 이것보단 ==이나 &gt;,&lt; 같은 연산자로 비교하는걸 추천하고 있다.</p>
+</article><section class="article labels"><a class="category" href=/categories/beakjoon/>Beakjoon</a><a class="category" href=/categories/go/>GO</a></section></div><section class="article navigation"><p><a class="link" href="/posts/beakjoon_tv%ED%81%AC%EA%B8%B0/"><span class="li">&rarr;</span>Beakjoon_TV크기</a></p></section></div><section id="footer" class="footer"><div class="footer-wrap">
+    <p class="copyright">CHIqueen</p>
+    <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
+        target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 
+        target="_blank">Notepadium</a></p>
+</div></section><script src="/js/hljs.min.0799348a91dce12c6be4a73f943cfe78f181f4e6f6ec35c4af0fca1de377879f77cfab03c30f03a174d675737b5a9314.js" integrity="sha384-B5k0ipHc4Sxr5Kc/lDz&#43;ePGB9Ob27DXErw/KHeN3h593z6sDww8DoXTWdXN7WpMU"></script><script>hljs.initHighlightingOnLoad();</script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-162012521-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</div>
+</body>
+
+</html>

@@ -6,17 +6,37 @@
     <description>Recent content in Categories on CHIqueen</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Sun, 29 Mar 2020 10:22:13 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2020 18:26:08 +0900</lastBuildDate>
     
         <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Beakjoon</title>
+      <link>/categories/beakjoon/</link>
+      <pubDate>Tue, 31 Mar 2020 18:26:08 +0900</pubDate>
+      
+      <guid>/categories/beakjoon/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
       <title>Go</title>
       <link>/categories/go/</link>
-      <pubDate>Sun, 29 Mar 2020 10:22:13 +0900</pubDate>
+      <pubDate>Tue, 31 Mar 2020 18:26:08 +0900</pubDate>
       
       <guid>/categories/go/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Baekjoon</title>
+      <link>/categories/baekjoon/</link>
+      <pubDate>Tue, 31 Mar 2020 18:22:14 +0900</pubDate>
+      
+      <guid>/categories/baekjoon/</guid>
       <description></description>
       
     </item>

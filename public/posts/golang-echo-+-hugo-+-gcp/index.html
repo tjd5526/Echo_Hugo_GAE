@@ -8,64 +8,59 @@
     <h1 class="article title">Golang Echo + Hugo + GAE</h1><p class="article date">2020-03-29</p></section><article class="article markdown-body"><p>테마는 notepadium을 사용했습니다.<br>
 <a href="https://themes.gohugo.io/hugo-notepadium/"target="_blank">https://themes.gohugo.io/hugo-notepadium/</a></p>
 <hr>
-<p><a target="_blank" rel="noopener noreferrer" 
-  href="/EHG-1.png"><img  src="/EHG-1.png"
-        alt="."/></a><br>
-프로젝트 구조입니다.<br>
+<p>프로젝트 구조입니다.<br>
 GCP에 올려줄땐 public, app.go, app-standalone.go, go.mod, go.sum, app.yaml만 올려줍니다.</p>
 <p>config.toml는 아래 처럼 설정했습니다.</p>
-<pre><code>baseURL = &quot;https://go.chiqueen.dev&quot;
-languageCode = &quot;ko-kr&quot;
-title = &quot;CHIqueen&quot;
-theme = &quot;hugo-notepadium&quot;
-googleAnalytics = &quot;&quot;
-enableRobotsTXT = true
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#a6e22e">baseURL</span> = <span style="color:#e6db74">&#34;https://go.chiqueen.dev&#34;</span>
+<span style="color:#a6e22e">languageCode</span> = <span style="color:#e6db74">&#34;ko-kr&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;CHIqueen&#34;</span>
+<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;hugo-notepadium&#34;</span>
+<span style="color:#a6e22e">googleAnalytics</span> = <span style="color:#e6db74">&#34;&#34;</span>
+<span style="color:#a6e22e">enableRobotsTXT</span> = <span style="color:#66d9ef">true</span>
 
-[params]
-style = &quot;auto&quot;
+[<span style="color:#a6e22e">params</span>]
+<span style="color:#a6e22e">style</span> = <span style="color:#e6db74">&#34;auto&#34;</span>
 
-[params.syntax]
-use = &quot;hljs&quot;
-theme = &quot;dracula&quot;
-darkTheme = &quot;xcode-dark&quot;
+[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">syntax</span>]
+<span style="color:#a6e22e">use</span> = <span style="color:#e6db74">&#34;hljs&#34;</span>
+<span style="color:#a6e22e">theme</span> = <span style="color:#e6db74">&#34;dracula&#34;</span>
+<span style="color:#a6e22e">darkTheme</span> = <span style="color:#e6db74">&#34;xcode-dark&#34;</span>
 
-[params.assets]
-css = [&quot;css/fonts.css&quot;]
+[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">assets</span>]
+<span style="color:#a6e22e">css</span> = [<span style="color:#e6db74">&#34;css/fonts.css&#34;</span>]
 
-[params.nav]
-showCategories = true
-showTags = true
+[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">nav</span>]
+<span style="color:#a6e22e">showCategories</span> = <span style="color:#66d9ef">true</span>
+<span style="color:#a6e22e">showTags</span> = <span style="color:#66d9ef">true</span>
 
-[[params.nav.custom]]
-title = &quot;About&quot;
-url = &quot;/about&quot;
-</code></pre><p>Hugo의 나머지 설정은 <a href="https://gohugo.io/getting-started/quick-start/"target="_blank">quick-start</a>를 참고해주세요</p>
+[[<span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">nav</span>.<span style="color:#a6e22e">custom</span>]]
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;About&#34;</span>
+<span style="color:#a6e22e">url</span> = <span style="color:#e6db74">&#34;/about&#34;</span>
+</code></pre></div><p>Hugo의 나머지 설정은 <a href="https://gohugo.io/getting-started/quick-start/"target="_blank">quick-start</a>를 참고해주세요</p>
 <p>아래는 app.yaml입니다.</p>
-<pre><code>runtime: go113
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">runtime</span>: go113
 
-handlers:
-  - url: /
-    mime_type: text/html
-    static_files: public/index.html
-    upload: public/index.html
+<span style="color:#66d9ef">handlers</span>:
+  - <span style="color:#66d9ef">url</span>: /
+    <span style="color:#66d9ef">mime_type</span>: text/html
+    <span style="color:#66d9ef">static_files</span>: public/index.html
+    <span style="color:#66d9ef">upload</span>: public/index.html
 
-  - url: /js
-    mime_type: text/javascript
-    static_dir: public/js
+  - <span style="color:#66d9ef">url</span>: /js
+    <span style="color:#66d9ef">mime_type</span>: text/javascript
+    <span style="color:#66d9ef">static_dir</span>: public/js
 
-  - url: /.*
-    script: auto
-</code></pre><p>처음 굉장히 오래걸린게 app.yaml인데 echo docs에 잘 나와 있어서 빠르게 끝났던거 같습니다.</p>
+  - <span style="color:#66d9ef">url</span>: /.*
+    <span style="color:#66d9ef">script</span>: auto
+</code></pre></div><p>처음 굉장히 오래걸린게 app.yaml인데 echo docs에 잘 나와 있어서 빠르게 끝났던거 같습니다.</p>
 <p>나머지 app.go랑 app-standalone.go는 <a href="https://echo.labstack.com/cookbook/google-app-engine"target="_blank">https://echo.labstack.com/cookbook/google-app-engine</a> 이걸 참고하시면 됩니다.</p>
 <p>이제 의존성 관리를 위해 Go module을 사용해줍니다.</p>
-<pre><code>$ go mod init
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ go mod init
 $ go build
-</code></pre>
-<p>go.mod와 go.sum 파일이 생겼다면
+</code></pre></div><p>go.mod와 go.sum 파일이 생겼다면
 이제 git에 올려준뒤</p>
-<pre><code>$ gcloud app deploy
-</code></pre>
-<p>해주면 끝</p></article><section class="article labels"><a class="category" href=/categories/go/>Go</a><a class="tag" href=/tags/echo/>Echo</a><a class="tag" href=/tags/gcp/>GCP</a><a class="tag" href=/tags/hugo/>Hugo</a></section></div></div><section id="footer" class="footer"><div class="footer-wrap">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ gcloud app deploy
+</code></pre></div><p>해주면 끝</p></article><section class="article labels"><a class="category" href=/categories/go/>Go</a><a class="tag" href=/tags/echo/>Echo</a><a class="tag" href=/tags/gcp/>GCP</a><a class="tag" href=/tags/hugo/>Hugo</a></section></div><section class="article navigation"><p><a class="link" href="/posts/beakjoon_tv%ED%81%AC%EA%B8%B0/"><span class="li">&larr;</span>Beakjoon_TV크기</a></p></section></div><section id="footer" class="footer"><div class="footer-wrap">
     <p class="copyright">CHIqueen</p>
     <p class="powerby"><span>Powered by </span><a href="https://gohugo.io" 
         target="_blank">Hugo</a><span> and the </span><a href="https://themes.gohugo.io/hugo-notepadium/" 

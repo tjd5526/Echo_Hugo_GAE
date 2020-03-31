@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Baekjoon on CHIqueen</title>
+    <link>/categories/baekjoon/</link>
+    <description>Recent content in Baekjoon on CHIqueen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 31 Mar 2020 18:22:14 +0900</lastBuildDate>
+    
+        <atom:link href="/categories/baekjoon/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beakjoon_TV크기</title>
+      <link>/posts/beakjoon_tv%ED%81%AC%EA%B8%B0/</link>
+      <pubDate>Tue, 31 Mar 2020 18:22:14 +0900</pubDate>
+      
+      <guid>/posts/beakjoon_tv%ED%81%AC%EA%B8%B0/</guid>
+      <description>github
+package main import ( &amp;#34;fmt&amp;#34; &amp;#34;math&amp;#34; ) func main(){ var a,b,c float64 fmt.Scanln(&amp;amp;a,&amp;amp;b,&amp;amp;c) d := math.Sqrt(math.Pow(a,2)/(math.Pow(b,2)+math.Pow(c,2))) fmt.Println(int(b*d), int(c*d)) } 처음엔 math.Floor로 내림했지만 int로 바꿔줬다.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
